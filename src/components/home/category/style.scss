@@ -1,0 +1,37 @@
+$large-deskop: 1600px;
+$lg: 992px;
+@mixin large-desktop {
+  @media (min-width:#{$large-deskop}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width:#{$lg}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width:#{$lg}) {
+    @content;
+  }
+}
+
+.section-container {
+  .category-name {
+    font-size: 18px;
+    background: #222;
+    color: #fff;
+    font-weight: 600;
+    padding: 15px 25px;
+    position: relative;
+    display: inline-block;
+    min-width: 180px;
+    margin: 10px 0 50px 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 100px);
+  }
+  .category-name:hover{
+      
+  }
+}

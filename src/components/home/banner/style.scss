@@ -1,0 +1,80 @@
+$large-deskop: 1600px;
+$lg: 992px;
+@mixin large-desktop {
+  @media (min-width:#{$large-deskop}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width:#{$lg}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width:#{$lg}) {
+    @content;
+  }
+}
+img {
+  width: 100%;
+}
+.banner-event {
+  width: 90%;
+  margin: 0 auto;
+  @include large-desktop() {
+    max-width: 1270px;
+  }
+  div:nth-child(2) {
+    position: relative;
+    .shop-now {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      position: absolute;
+      top: 140px;
+      background: #f3f3f3;
+      padding: 7px;
+      max-width: 500px;
+      min-height: 100px;
+      height: 50%;
+      width: 300px;
+      left: calc(26% - 190px);
+      border: 2px solid #d8d8d8;
+      @include mobile() {
+        position: relative;
+        border: 0;
+        max-width: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: auto;
+        padding: 20px;
+        bottom: 0;
+        min-height: auto;
+      }
+      h2 {
+        margin: 20px 0 10px 0;
+      }
+      p {
+        margin-bottom: 50px;
+      }
+      a {
+        width: 50%;
+        margin: 10px 0;
+        padding: 5px 15px;
+        border: 1px solid #444;
+        display: inline-block;
+        min-width: 90px;
+        color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+      }
+      a:hover {
+        color: white;
+        background: black;
+      }
+    }
+  }
+}
