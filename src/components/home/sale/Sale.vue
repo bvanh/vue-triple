@@ -12,11 +12,6 @@
       <div class="swiper-button-next" slot="button-next"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
     </swiper>
-    <a-row>
-      <!-- <a-col><img :src=""</a-col>
-      <a-col></a-col>
-      <a-col></a-col> -->
-    </a-row>
   </div>
 </template>
 

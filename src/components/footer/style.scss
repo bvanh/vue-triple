@@ -15,68 +15,91 @@ $lg: 992px;
     @content;
   }
 }
-.footer{
-    
-    .options{
-        width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  @include large-desktop() {
-    max-width: 1110px;
+.footer {
+  margin-top: 2rem;
+  a{
+    color: #ddd;
   }
-  div{
-    @include mobile(){
+  .options {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    @include large-desktop() {
+      max-width: 1110px;
+    }
+    div {
+      @include mobile() {
         flex-direction: column;
         display: flex;
-    justify-content: center;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
+      }
+      span {
+        line-height: 40px;
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
-    span{line-height: 40px;
-    font-size: 18px;
-    font-weight: 600;
+    .icon-expand {
+      width: 30px;
+      height: 30px;
+      margin: 5px 10px 5px 0;
+      @include mobile {
+        margin: 5px auto;
+      }
     }
-    
   }
-        .icon-expand{
-            width:30px;
-            height: 30px;
-            margin: 5px 10px 5px 0;
-            @include mobile{
-margin:5px auto;
-            }
-        }
-    }
-    .info{
-        background: #333;
+  .info {
+    background: #333;
     padding: 20px 0;
     position: relative;
-    div{
-        width: 90%;
-  margin: 0 auto;
-  @include large-desktop() {
-    max-width: 1270px;
-  }
-    .info-title{
+    margin-top:1rem;
+    div {
+      max-width: 90%;
+      margin: 0 auto;
+      @include large-desktop() {
+        max-width: 1270px;
+      }
+      .info-title {
         margin-bottom: 20px;
-    color: #ddd;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    }
-    div{
-        display:flex;
+        color: #ddd;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+      div {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-
-    }
-        .info-logo{
-            width: 134px;
-            margin-left: 7px;
+        justify-content: space-around;
+        .icon-socials {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          margin-bottom: 1rem;
+          img {
+            width: 25px;
+            height: 25px;
+            margin: 0 4px;
+          }
         }
-        .info-bct {
-            width: 170px;
-    margin-top: 5px;
+      }
+      .info-logo {
+        width: 134px;
+        margin-left: 7px;
+      }
+      .info-bct {
+        width: 170px;
+        margin-top: 5px;
+      }
+      .info-mail {
+        input {
+          background: transparent;
+          // margin: 10px 0;
         }
+        span {
+          color: white;
+        }
+      }
     }
-}
+  }
 }
