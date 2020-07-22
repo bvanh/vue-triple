@@ -1,0 +1,115 @@
+$large-deskop: 1600px;
+$lg: 992px;
+@mixin large-desktop {
+  @media (min-width:#{$large-deskop}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width:#{$lg}) {
+    @content;
+  }
+}
+.header {
+  .nav {
+    background: #333434;
+    height: 33px;
+    .container {
+      max-width: 90%;
+      margin: 0 auto;
+      height: 100%;
+      .ant-col {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          margin: 0 10px;
+        }
+      }
+      @include large-desktop() {
+        max-width: 1440px;
+      }
+    }
+    img {
+      max-width: 20px;
+      // padding: 0 10px;
+    }
+  }
+  .header-center {
+    background: black;
+    position: relative;
+    @include lg {
+      padding: 20px 0;
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      @include large-desktop() {
+        max-width: 1440px;
+      }
+      div {
+        text-align: center;
+        img {
+          max-width: 100%;
+          @include lg {
+            max-width: 50%;
+          }
+        }
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .bm-burger-button {
+          position: relative;
+          top: 0;
+          left: -10px;
+          @include lg {
+            display: none;
+          }
+          span {
+            background: white;
+          }
+        }
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .ant-input {
+          width: 70%;
+          height: 60%;
+          background-color: transparent;
+          color: white;
+          border-radius: 0;
+        }
+        input:hover {
+          border-color: white;
+        }
+      }
+    }
+  }
+  .header-menu {
+    display: none;
+    @include lg() {
+      display: flex;
+    }
+    a {
+      display: inline-block;
+      line-height: 55px;
+      height: 55px;
+      font-size: 15px;
+      transition: all 0.25s ease-in-out;
+      border: 0;
+      color: #000;
+      margin: 0;
+      font-weight: 400;
+      padding: 0 40px;
+      position: relative;
+      text-transform: uppercase;
+    }
+    a:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}

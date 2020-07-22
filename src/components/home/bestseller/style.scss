@@ -1,0 +1,44 @@
+$large-deskop: 1600px;
+$lg: 992px;
+@mixin large-desktop {
+  @media (min-width:#{$large-deskop}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width:#{$lg}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width:#{$lg}) {
+    @content;
+  }
+}
+.section-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  @include large-desktop() {
+    max-width: 1270px;
+  }
+  h2{
+      margin: 50px 0 20px 0;
+      font-size: 30px;
+      font-weight: 600;
+  }
+  .product-name {
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 6px 0;
+  }
+  .product-price {
+    font-weight: 700;
+    line-height: 18px;
+    font-size: 20px;
+    color: black;
+  }
+}
